@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Frontend4;
 using Frontend4.Hardware;
-
+//BLAH!
 
 /**
  * Represents vending machines, fully configured and with all software
