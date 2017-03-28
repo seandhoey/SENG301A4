@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using Frontend4;
 using Frontend4.Hardware;
-//BLAH!
+using seng301_asgn4.src;
+
+//This class is used for the business logic?
 
 /**
  * Represents vending machines, fully configured and with all software
@@ -48,7 +50,9 @@ public class VendingMachine {
     public VendingMachine(Cents[] coinKinds, int selectionButtonCount, int coinRackCapacity, int productRackCapacity, int receptacleCapacity) {
 	    this.hardwareFacade = new HardwareFacade(coinKinds, selectionButtonCount, coinRackCapacity, productRackCapacity, receptacleCapacity);
 
-
-	    /* YOU CAN BUILD AND INSTALL THE HARDWARE HERE */
+        //Facade initialization
+        CommunicationFacade commFacade = new CommunicationFacade();
+        PaymentFacade payFacade = new PaymentFacade();
+        ProductFacade prodFacade = new ProductFacade();
     }
 }
