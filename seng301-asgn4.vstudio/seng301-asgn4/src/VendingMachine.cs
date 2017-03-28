@@ -73,12 +73,12 @@ public class VendingMachine {
      *             If any of the arguments is null, or the size of productCosts
      *             and productNames differ.
      */
-    public VendingMachine(Cents[] coinKinds, int selectionButtonCount, int coinRackCapacity, int productRackCapacity, int receptacleCapacity) {
-	    this.hardwareFacade = new HardwareFacade(coinKinds, selectionButtonCount, coinRackCapacity, productRackCapacity, receptacleCapacity);
-
-    //Facade initialization
-    this.communicationFacade = new CommunicationFacade();
-    this.paymentFacade = new PaymentFacade();
-    this.productFacade = new ProductFacade();
+    public VendingMachine(Cents[] coinKinds, int selectionButtonCount, int coinRackCapacity, int productRackCapacity, int receptacleCapacity)
+    {
+        //Facade initialization
+        this.hardwareFacade = new HardwareFacade(coinKinds, selectionButtonCount, coinRackCapacity, productRackCapacity, receptacleCapacity);
+        this.communicationFacade = new CommunicationFacade();
+        this.paymentFacade = new PaymentFacade();
+        this.productFacade = new ProductFacade();
     }
 }
