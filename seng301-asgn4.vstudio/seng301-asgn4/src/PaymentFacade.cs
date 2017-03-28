@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace seng301_asgn4.src
 {
-    class PaymentFacade
+    public class PaymentFacade
     {
         public PaymentFacade()
         {
@@ -22,6 +22,6 @@ namespace seng301_asgn4.src
         //If button pressed, ask VendingMachine to handle:
             //Is there enough money between credit/inserted coins?
             //VM would request product facade to dispense product?
-            //VM would request payment facade to dispence change if applicable?
+            //VM would request payment facade to dispense change if applicable?
     }
 }

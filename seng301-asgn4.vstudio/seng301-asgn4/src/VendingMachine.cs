@@ -14,9 +14,35 @@ using seng301_asgn4.src;
 public class VendingMachine {
 
     private HardwareFacade hardwareFacade;
-    public HardwareFacade Hardware {
-        get {
+    public HardwareFacade Hardware
+    {
+        get
+        {
             return this.hardwareFacade;
+        }
+    }
+    private CommunicationFacade communicationFacade;
+    public CommunicationFacade Communication
+    {
+        get
+        {
+            return this.communicationFacade;
+        }
+    }
+    private PaymentFacade paymentFacade;
+    public PaymentFacade Payment
+    {
+        get
+        {
+            return this.paymentFacade;
+        }
+    }
+    private ProductFacade productFacade;
+    public ProductFacade Product
+    {
+        get
+        {
+            return this.productFacade;
         }
     }
 
@@ -51,9 +77,8 @@ public class VendingMachine {
 	    this.hardwareFacade = new HardwareFacade(coinKinds, selectionButtonCount, coinRackCapacity, productRackCapacity, receptacleCapacity);
 
     //Facade initialization
-    //May want to change this to how the Hardware is constructed above?
-    CommunicationFacade commFacade = new CommunicationFacade();
-    PaymentFacade payFacade = new PaymentFacade();
-    ProductFacade prodFacade = new ProductFacade();
+    this.communicationFacade = new CommunicationFacade();
+    this.paymentFacade = new PaymentFacade();
+    this.productFacade = new ProductFacade();
     }
 }

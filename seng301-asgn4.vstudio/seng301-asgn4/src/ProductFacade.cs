@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace seng301_asgn4.src
 {
-    class ProductFacade
+    public class ProductFacade
     {
         public ProductFacade()
         {
