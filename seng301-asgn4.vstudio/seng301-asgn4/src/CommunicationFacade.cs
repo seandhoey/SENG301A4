@@ -8,6 +8,9 @@ namespace seng301_asgn4.src
 {
     class CommunicationFacade
     {
-        CommunicationFacade
+        public CommunicationFacade()
+        {
+            //Constructor
+        }
     }
 }

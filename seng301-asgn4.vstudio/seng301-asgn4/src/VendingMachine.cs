@@ -50,9 +50,10 @@ public class VendingMachine {
     public VendingMachine(Cents[] coinKinds, int selectionButtonCount, int coinRackCapacity, int productRackCapacity, int receptacleCapacity) {
 	    this.hardwareFacade = new HardwareFacade(coinKinds, selectionButtonCount, coinRackCapacity, productRackCapacity, receptacleCapacity);
 
-        //Facade initialization
-        CommunicationFacade commFacade = new CommunicationFacade();
-        PaymentFacade payFacade = new PaymentFacade();
-        ProductFacade prodFacade = new ProductFacade();
+    //Facade initialization
+    //May want to change this to how the Hardware is constructed above?
+    CommunicationFacade commFacade = new CommunicationFacade();
+    PaymentFacade payFacade = new PaymentFacade();
+    ProductFacade prodFacade = new ProductFacade();
     }
 }
