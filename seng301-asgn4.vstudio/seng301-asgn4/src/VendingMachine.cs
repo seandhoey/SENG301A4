@@ -78,7 +78,7 @@ public class VendingMachine {
         //Facade initialization
         this.hardwareFacade = new HardwareFacade(coinKinds, selectionButtonCount, coinRackCapacity, productRackCapacity, receptacleCapacity);
         this.communicationFacade = new CommunicationFacade();
-        this.paymentFacade = new PaymentFacade();
+        this.paymentFacade = new PaymentFacade(this.hardwareFacade);
         this.productFacade = new ProductFacade();
     }
 }
