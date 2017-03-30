@@ -83,6 +83,9 @@
     <Compile Include="src\Frontend4\Product.cs" />
     <Compile Include="src\Frontend4\ProductKind.cs" />
     <Compile Include="src\VendingMachine.cs" />
+    <Compile Include="src\PaymentFacade.cs" />
+    <Compile Include="src\CommunicationFacade.cs" />
+    <Compile Include="src\ProductFacade.cs" />
     <Compile Include="test\BadSetup.cs" />
     <Compile Include="test\GoodCoinWeirdness.cs" />
     <Compile Include="test\GoodHappyPath.cs" />
