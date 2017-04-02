@@ -11,6 +11,7 @@ namespace seng301_asgn4.src
         public ProductFacade()
         {
             //Constructor
+            //New
         }
     }
 }

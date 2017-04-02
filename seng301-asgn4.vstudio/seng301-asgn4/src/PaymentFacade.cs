@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Frontend4.Hardware;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,18 @@ namespace seng301_asgn4.src
 {
     public class PaymentFacade
     {
-        public PaymentFacade()
+        private HardwareFacade hardwareFacade;
+        public PaymentFacade(HardwareFacade hardwareFacade)
         {
             //Constructor
+            this.hardwareFacade = hardwareFacade;
+            this.hardwareFacade.CoinSlot += CoinAccepted(); //DEBUG
         }
 
+        public void CoinAccepted()
+        {
+            
+        }
         //Subscribe to coin inserted events
         //If coin inserted, update VendingMachine about current coin count
 
@@ -20,8 +28,8 @@ namespace seng301_asgn4.src
         //If non-coin inserted, update VendingMachine about credit
 
         //If button pressed, ask VendingMachine to handle:
-            //Is there enough money between credit/inserted coins?
-            //VM would request product facade to dispense product?
-            //VM would request payment facade to dispense change if applicable?
+        //Is there enough money between credit/inserted coins?
+        //VM would request product facade to dispense product?
+        //VM would request payment facade to dispense change if applicable?
     }
 }
