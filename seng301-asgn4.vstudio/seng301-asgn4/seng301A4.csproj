@@ -48,9 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\BusinessRules.cs" />
     <Compile Include="src\CommunicationFacade.cs" />
     <Compile Include="src\Frontend4.Hardware\AbstractHardware.cs" />
     <Compile Include="src\Frontend4.Hardware\CoinChannel.cs" />
+    <Compile Include="src\Frontend4.Hardware\CentEventArgs.cs" />
     <Compile Include="src\Frontend4.Hardware\CoinEventArgs.cs" />
     <Compile Include="src\Frontend4.Hardware\CoinRack.cs" />
     <Compile Include="src\Frontend4.Hardware\CoinReceptacle.cs" />
@@ -86,9 +88,6 @@
     <Compile Include="src\PaymentFacade.cs" />
     <Compile Include="src\ProductFacade.cs" />
     <Compile Include="src\VendingMachine.cs" />
-    <Compile Include="src\PaymentFacade.cs" />
-    <Compile Include="src\CommunicationFacade.cs" />
-    <Compile Include="src\ProductFacade.cs" />
     <Compile Include="test\BadSetup.cs" />
     <Compile Include="test\GoodCoinWeirdness.cs" />
     <Compile Include="test\GoodHappyPath.cs" />

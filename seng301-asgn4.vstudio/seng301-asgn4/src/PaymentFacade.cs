@@ -27,7 +27,7 @@ namespace seng301_asgn4.src
             this.selectionButtonToIndex = new Dictionary<SelectionButton, int>();
             for (int i = 0; i < this.hardwareFacade.SelectionButtons.Length; i++)
             {
-                this.hardwareFacade.SelectionButtons[i].Pressed += new EventHandler(selectionPressed); //Debug: What?
+                this.hardwareFacade.SelectionButtons[i].Pressed += new EventHandler(selectionPressed);
                 this.selectionButtonToIndex[this.hardwareFacade.SelectionButtons[i]] = i;
             }
 
@@ -38,21 +38,22 @@ namespace seng301_asgn4.src
         public void addCoin(object sender, CoinEventArgs e) //Let business rule know about added coins
         {
             businessRules.addCoins(e.Coin);
+            //Rules would tell display how much credit available?
         }
 
         public void addCredit(object sender, CentEventArgs e) //Add credit to business rule if fired
         {
             businessRules.addCredit(e.Cent.Value);
+            //Rules would tell display how much credit available?
         }
 
-        public void selectionPressed(object sender, CentEventArgs e)
+        public void selectionPressed(object sender, EventArgs e)
         {
+            int index = this.selectionButtonToIndex[(SelectionButton)sender];
             //Let business rule know which button
             //Is there enough money between credit/inserted coins?
-            //VM would request product facade to dispense product?
-            //VM would request payment facade to dispense change if applicable?
-
-            int index = this.selectionButtonToIndex[(SelectionButton)sender];
+            //Rules would requests product facade to dispense product?
+            //Rules would request payment facade to dispense change if applicable?
         }
     
     }
