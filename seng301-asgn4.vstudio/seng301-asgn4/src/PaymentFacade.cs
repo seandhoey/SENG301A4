@@ -12,7 +12,6 @@ namespace seng301_asgn4.src
     {
         private HardwareFacade hardwareFacade;
         private BusinessRules businessRules;
-        private Dictionary<SelectionButton, int> selectionButtonToIndex;
 
         //      For future addition of credit acceptance handling. Replace AcceptorClass and acceptorName as needed:
         //      private AcceptorClass acceptorName = new <AcceptorClass>();

@@ -17,7 +17,6 @@ namespace seng301_asgn4.src
         public event EventHandler<MessageEventArgs> creditDisplay;
 
         private int creditAvailable = 0;
-        private Dictionary<SelectionButton, int> selectionButtonToIndex;
 
         /**
          * Constructor
@@ -26,26 +25,6 @@ namespace seng301_asgn4.src
         {
             this.hardwareFacade = hardwareFacade;
             this.businessRules = businessRules;
-
-            this.selectionButtonToIndex = new Dictionary<SelectionButton, int>();
-            for (int i = 0; i < this.hardwareFacade.SelectionButtons.Length; i++)
-            {
-                this.hardwareFacade.SelectionButtons[i].Pressed += new EventHandler(selectionPressed);
-                this.selectionButtonToIndex[this.hardwareFacade.SelectionButtons[i]] = i;
-            }
-        }
-
-        /**
-         * Let business rules know about button selection
-         */
-        public void selectionPressed(object sender, EventArgs e)
-        {
-            int index = this.selectionButtonToIndex[(SelectionButton)sender];
-            //TODO:
-            //Let business rule know which button
-            //Is there enough money between credit/inserted coins?
-            //Rules would request product facade to dispense product?
-            //Rules would request payment facade to dispense change if applicable?
         }
 
         /**

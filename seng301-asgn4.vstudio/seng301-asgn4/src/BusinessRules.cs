@@ -17,7 +17,7 @@ namespace seng301_asgn4.src
         private PaymentFacade paymentFacade;
         private ProductFacade productFacade;
 
-        private int creditInserted = 0;
+        public int creditInserted = 0;
         private List<Coin> addedCoins = new List<Coin>();
 
         /**
@@ -50,5 +50,14 @@ namespace seng301_asgn4.src
             this.communicationFacade.addedCredit(creditInserted); //Update communication facade
         }
 
+        public void buttonPressed(int index, ProductKind productKind, int cost)
+        {
+            //Currently, button exists and we have enough credit inserted
+
+            //TODO:
+            //request product facade to dispense product
+            //calculate change
+            //request payment facade to dispense change if applicable
+        }
     }
 }
