@@ -42,9 +42,11 @@ namespace seng301_asgn4.src
             int cost = (cents.Value);
             if (this.businessRules.creditInserted >= cost) //Do we have enough money?
             {
-                this.businessRules.buttonPressed(index, productKind, cost); //If so, let business rules handle
+                this.businessRules.buttonPressed(index, productKind, cost, this.hardwareFacade.CoinRacks); //If so, let business rules handle
             }
             //TODO: else?
         }
+
+        //TODO: Add method for dispensing product requested by business rules
     }
 }

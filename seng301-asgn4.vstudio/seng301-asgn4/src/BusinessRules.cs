@@ -40,7 +40,7 @@ namespace seng301_asgn4.src
         }
 
         /**
-         * Update what coins have been inserted
+         * Keep track of what coins have been inserted
          */
         public void addCoins(Coin coin)
         {
@@ -50,9 +50,10 @@ namespace seng301_asgn4.src
             this.communicationFacade.addedCredit(creditInserted); //Update communication facade
         }
 
-        public void buttonPressed(int index, ProductKind productKind, int cost)
+        public void buttonPressed(int index, ProductKind productKind, int cost, CoinRack[] coinRacks)
         {
             //Currently, button exists and we have enough credit inserted
+            //Will likely need to know whats in the coinRacks. Note: you tell the facades what to do with the information
 
             //TODO:
             //request product facade to dispense product

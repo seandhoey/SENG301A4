@@ -28,8 +28,6 @@ namespace seng301_asgn4.src
 
             //      For future addition of credit acceptance handling. Replace acceptorName and eventName as needed
             //      this.acceptorName.eventName += new EventHandler<CentEventArgs>(addCredit);
-
-            //TODO: Add event for listening to BusinessRules for amount of change to dispense
         }
 
         /**
@@ -47,6 +45,7 @@ namespace seng301_asgn4.src
         {
             businessRules.addCredit(e.Cent.Value);
         }
-    
+
+        //TODO: Add method for dispensing change requested by business rules
     }
 }
