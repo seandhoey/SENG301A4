@@ -4,12 +4,9 @@ using Frontend4;
 using Frontend4.Hardware;
 using seng301_asgn4.src;
 
-//This class is used for the business logic?
-
 /**
  * Represents vending machines, fully configured and with all software
  * installed.
- * 
  */
 public class VendingMachine {
 
@@ -45,7 +42,14 @@ public class VendingMachine {
             return this.productFacade;
         }
     }
-
+    private BusinessRules businessRules;
+    public BusinessRules Business
+    {
+        get
+        {
+            return this.businessRules;
+        }
+    }
 
     /**
      * Creates a standard arrangement for the vending machine. All the
@@ -75,10 +79,11 @@ public class VendingMachine {
      */
     public VendingMachine(Cents[] coinKinds, int selectionButtonCount, int coinRackCapacity, int productRackCapacity, int receptacleCapacity)
     {
-        //Facade initialization
+        //Initialization
         this.hardwareFacade = new HardwareFacade(coinKinds, selectionButtonCount, coinRackCapacity, productRackCapacity, receptacleCapacity);
-        this.communicationFacade = new CommunicationFacade();
-        this.paymentFacade = new PaymentFacade(this.hardwareFacade);
-        this.productFacade = new ProductFacade();
+        this.businessRules = new BusinessRules();
+        this.communicationFacade = new CommunicationFacade(this.hardwareFacade, this.businessRules);
+        this.paymentFacade = new PaymentFacade(this.hardwareFacade, this.businessRules);
+        this.productFacade = new ProductFacade(this.hardwareFacade, this.businessRules);
     }
 }
