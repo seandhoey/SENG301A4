@@ -81,9 +81,17 @@ public class VendingMachine {
     {
         //Initialization
         this.hardwareFacade = new HardwareFacade(coinKinds, selectionButtonCount, coinRackCapacity, productRackCapacity, receptacleCapacity);
-        this.businessRules = new BusinessRules();
+        this.businessRules = new BusinessRules(this.communicationFacade, this.paymentFacade, this.productFacade);
         this.communicationFacade = new CommunicationFacade(this.hardwareFacade, this.businessRules);
         this.paymentFacade = new PaymentFacade(this.hardwareFacade, this.businessRules);
         this.productFacade = new ProductFacade(this.hardwareFacade, this.businessRules);
+    }
+
+    /**
+     * Work around for "direct access" to Configure
+     */
+    public void Configure(List<ProductKind> productKinds)
+    {
+        this.hardwareFacade.Configure(productKinds);
     }
 }

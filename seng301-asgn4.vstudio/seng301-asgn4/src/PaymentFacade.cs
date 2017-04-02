@@ -14,9 +14,12 @@ namespace seng301_asgn4.src
         private BusinessRules businessRules;
         private Dictionary<SelectionButton, int> selectionButtonToIndex;
 
-        //      For future addition of credit acceptance handling. Replace AcceptorClass and acceptorName as needed
+        //      For future addition of credit acceptance handling. Replace AcceptorClass and acceptorName as needed:
         //      private AcceptorClass acceptorName = new <AcceptorClass>();
 
+        /**
+         * Constructor
+         */
         public PaymentFacade(HardwareFacade hardwareFacade, BusinessRules businessRules) //Constructor
         {
             this.hardwareFacade = hardwareFacade;
@@ -24,36 +27,26 @@ namespace seng301_asgn4.src
 
             this.hardwareFacade.CoinReceptacle.CoinAdded += new EventHandler<CoinEventArgs>(addCoin);
 
-            this.selectionButtonToIndex = new Dictionary<SelectionButton, int>();
-            for (int i = 0; i < this.hardwareFacade.SelectionButtons.Length; i++)
-            {
-                this.hardwareFacade.SelectionButtons[i].Pressed += new EventHandler(selectionPressed);
-                this.selectionButtonToIndex[this.hardwareFacade.SelectionButtons[i]] = i;
-            }
-
             //      For future addition of credit acceptance handling. Replace acceptorName and eventName as needed
             //      this.acceptorName.eventName += new EventHandler<CentEventArgs>(addCredit);
+
+            //TODO: Add event for listening to BusinessRules for amount of change to dispense
         }
 
-        public void addCoin(object sender, CoinEventArgs e) //Let business rule know about added coins
+        /**
+         * Let business rule know about added coins
+         */
+        public void addCoin(object sender, CoinEventArgs e)
         {
             businessRules.addCoins(e.Coin);
-            //Rules would tell display how much credit available?
         }
 
-        public void addCredit(object sender, CentEventArgs e) //Add credit to business rule if fired
+        /**
+         * Add credit to business rule
+         */
+        public void addCredit(object sender, CentEventArgs e)
         {
             businessRules.addCredit(e.Cent.Value);
-            //Rules would tell display how much credit available?
-        }
-
-        public void selectionPressed(object sender, EventArgs e)
-        {
-            int index = this.selectionButtonToIndex[(SelectionButton)sender];
-            //Let business rule know which button
-            //Is there enough money between credit/inserted coins?
-            //Rules would requests product facade to dispense product?
-            //Rules would request payment facade to dispense change if applicable?
         }
     
     }

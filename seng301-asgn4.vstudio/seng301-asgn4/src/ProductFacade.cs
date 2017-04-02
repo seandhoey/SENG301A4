@@ -1,4 +1,5 @@
 ﻿using Frontend4.Hardware;
+using Frontend4;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,10 @@ namespace seng301_asgn4.src
     {
         private HardwareFacade hardwareFacade;
         private BusinessRules businessRules;
+
+        /**
+         * Constructor
+         */
         public ProductFacade(HardwareFacade hardwareFacade, BusinessRules businessRules)
         {
             this.hardwareFacade = hardwareFacade;

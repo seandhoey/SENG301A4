@@ -8,22 +8,46 @@ using System.Threading.Tasks;
 
 namespace seng301_asgn4.src
 {
+    /**
+     * Class representing most of the internal software for a Vending Machine. Handles background tasks for facades
+     */
     public class BusinessRules
     {
-        //Instance variables
+        private CommunicationFacade communicationFacade;
+        private PaymentFacade paymentFacade;
+        private ProductFacade productFacade;
+
         private int creditInserted = 0;
         private List<Coin> addedCoins = new List<Coin>();
 
-        public void addCredit(int amount) //Add credit, not needed to store in hardware
+        /**
+         * Constructor
+         */
+        public BusinessRules(CommunicationFacade communicationFacade, PaymentFacade paymentFacade, ProductFacade productFacade)
         {
-            this.creditInserted += amount;
+            this.communicationFacade = communicationFacade;
+            this.paymentFacade = paymentFacade;
+            this.productFacade = productFacade;
         }
 
-        public void addCoins(Coin coin) //Let the logic know what coins have been inserted
+        /**
+         * Keep track of credit outside of hardware
+         */
+        public void addCredit(int amount)
+        {
+            this.creditInserted += amount;
+            this.communicationFacade.addedCredit(creditInserted); //Update communication facade
+        }
+
+        /**
+         * Update what coins have been inserted
+         */
+        public void addCoins(Coin coin)
         {
             this.addedCoins.Add(coin);
-            Cents cents = coin.Value; //Weird fix...
+            Cents cents = coin.Value; //Weird work around
             this.creditInserted += (cents.Value);
+            this.communicationFacade.addedCredit(creditInserted); //Update communication facade
         }
 
     }
