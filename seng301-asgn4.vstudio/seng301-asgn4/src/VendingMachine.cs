@@ -8,7 +8,8 @@ using seng301_asgn4.src;
  * Represents vending machines, fully configured and with all software
  * installed.
  */
-public class VendingMachine {
+public class VendingMachine
+{
 
     private HardwareFacade hardwareFacade;
     public HardwareFacade Hardware
@@ -81,10 +82,11 @@ public class VendingMachine {
     {
         //Initialization
         this.hardwareFacade = new HardwareFacade(coinKinds, selectionButtonCount, coinRackCapacity, productRackCapacity, receptacleCapacity);
-        this.businessRules = new BusinessRules(this.communicationFacade, this.paymentFacade, this.productFacade);
+        this.businessRules = new BusinessRules(); //Make a barebones
         this.communicationFacade = new CommunicationFacade(this.hardwareFacade, this.businessRules);
         this.paymentFacade = new PaymentFacade(this.hardwareFacade, this.businessRules);
         this.productFacade = new ProductFacade(this.hardwareFacade, this.businessRules);
+        businessRules.init(this.communicationFacade, this.paymentFacade, this.productFacade); //Give businessRules the references now that they're made
     }
 
     /**

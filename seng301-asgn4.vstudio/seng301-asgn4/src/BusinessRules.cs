@@ -21,9 +21,16 @@ namespace seng301_asgn4.src
         private List<Coin> addedCoins = new List<Coin>();
 
         /**
-         * Constructor
+         * Default constructor
          */
-        public BusinessRules(CommunicationFacade communicationFacade, PaymentFacade paymentFacade, ProductFacade productFacade)
+        public BusinessRules()
+        {
+        }
+
+        /**
+         * Initialize the facade references
+         */
+        public void init(CommunicationFacade communicationFacade, PaymentFacade paymentFacade, ProductFacade productFacade)
         {
             this.communicationFacade = communicationFacade;
             this.paymentFacade = paymentFacade;
