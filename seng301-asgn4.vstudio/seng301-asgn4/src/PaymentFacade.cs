@@ -45,7 +45,15 @@ namespace seng301_asgn4.src
         {
             businessRules.addCredit(e.Cent.Value);
         }
-
-        //TODO: Add method for dispensing change requested by business rules
+        
+        /**
+         * Dispenses change requested by business rules
+         * 
+         * coins is a list of integers which are the indices of each coin to be dispensed
+         */
+        public void dispenseChange(List<int> coins)
+        {
+            //TODO: implement
+        }
     }
 }

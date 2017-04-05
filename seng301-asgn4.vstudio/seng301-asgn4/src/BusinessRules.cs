@@ -24,7 +24,7 @@ namespace seng301_asgn4.src
          * Default constructor
          */
         public BusinessRules()
-        {
+        { //Reference made, but values not initialized
         }
 
         /**
@@ -38,7 +38,7 @@ namespace seng301_asgn4.src
         }
 
         /**
-         * Keep track of credit outside of hardware
+         * Keep track of credit (not in hardware)
          */
         public void addCredit(int amount)
         {
@@ -57,15 +57,19 @@ namespace seng301_asgn4.src
             this.communicationFacade.addedCredit(creditInserted); //Update communication facade
         }
 
+        /**
+         * coinkRacks is an array containing each coin rack, ordered by the configured coinKinds
+         */
         public void buttonPressed(int index, ProductKind productKind, int cost, CoinRack[] coinRacks)
         {
             //Currently, button exists and we have enough credit inserted
-            //Will likely need to know whats in the coinRacks. Note: you tell the facades what to do with the information
+            this.productFacade.dispenseProduct(index);
+            List<int> coinIndices = new List<int>();
 
             //TODO:
-            //request product facade to dispense product
             //calculate change
             //request payment facade to dispense change if applicable
+            this.paymentFacade.dispenseChange(coinIndices);
         }
     }
 }
