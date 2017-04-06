@@ -66,10 +66,13 @@ namespace seng301_asgn4.src
             this.productFacade.dispenseProduct(index);
             List<int> coinIndices = new List<int>();
 
+            int change = creditInserted - cost;
+
             //TODO:
             //calculate change
             //request payment facade to dispense change if applicable
-            this.paymentFacade.dispenseChange(coinIndices);
+            
+            this.paymentFacade.dispenseChange(change);
         }
     }
 }

@@ -51,13 +51,35 @@ namespace seng301_asgn4.src
          * 
          * coins is a list of integers which are the indices of each coin to be dispensed
          */
-        public void dispenseChange(List<int> coins)
+        public void dispenseChange(int change)
         {
-            foreach(int coin in coins)
+
+            List<int> CoinRacksL = new List<int>();
+            for (int i = 0; i < this.hardwareFacade.CoinRacks.Count(); i++)
             {
-                this.hardwareFacade.CoinRacks[coin].ReleaseCoin();
+                CoinRacksL.Add(this.hardwareFacade.GetCoinKindForCoinRack(i).Value);
             }
-            
+
+            CoinRacksL.Sort();
+            CoinRacksL.Reverse();
+    
+            if (change >= 0) 
+            {
+                this.hardwareFacade.CoinReceptacle.StoreCoins();
+
+                if (change > 0)
+                {
+                    foreach (int coinType in CoinRacksL)
+                    {
+                        Cents cents = new Cents(coinType);
+                        while (((change - coinType) >= 0) && (this.hardwareFacade.GetCoinRackForCoinKind(cents).Count > 0))
+                        {
+                            this.hardwareFacade.GetCoinRackForCoinKind(cents).ReleaseCoin();
+                            change = change - coinType;
+                        }
+                    }
+                }
+            }
         }
     }
 }
