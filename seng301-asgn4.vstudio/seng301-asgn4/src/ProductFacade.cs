@@ -52,6 +52,7 @@ namespace seng301_asgn4.src
          */
         public void dispenseProduct(int index)
         {
+            this.hardwareFacade.ProductRacks[index].DispenseProduct();
             //TODO: implement
         }
     }

@@ -53,7 +53,11 @@ namespace seng301_asgn4.src
          */
         public void dispenseChange(List<int> coins)
         {
-            //TODO: implement
+            foreach(int coin in coins)
+            {
+                this.hardwareFacade.CoinRacks[coin].ReleaseCoin();
+            }
+            
         }
     }
 }
