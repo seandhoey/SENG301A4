@@ -1,10 +1,10 @@
-/*Author:           Lisa Hynes - 30011515
-* Author:           Sean Hoey - 10065269
-* Assignment:		04
-* Course:		    SENG 301
-* Instructor:		Tony Tang
-* TA:			    May Mahmoud
-* Due Date:		    April 6th, 2017 12:00pm 
+/*Author & Student ID:  Lisa Hynes - 30011515
+* Author & Student ID:  Sean Hoey - 10065269
+* Assignment:		    04
+* Course:		        SENG 301
+* Instructor:		    Tony Tang
+* TA:			        May Mahmoud
+* Due Date:		        April 6th, 2017 12:00pm 
  */
 
 
@@ -62,7 +62,6 @@ namespace seng301_asgn4.src
         public void dispenseProduct(int index)
         {
             this.hardwareFacade.ProductRacks[index].DispenseProduct();
-            //TODO: implement
         }
     }
 }

@@ -1,10 +1,10 @@
-/*Author:           Lisa Hynes - 30011515
-* Author:           Sean Hoey - 10065269
-* Assignment:		04
-* Course:		    SENG 301
-* Instructor:		Tony Tang
-* TA:			    May Mahmoud
-* Due Date:		    April 6th, 2017 12:00pm 
+/*Author & Student ID:  Lisa Hynes - 30011515
+* Author & Student ID:  Sean Hoey - 10065269
+* Assignment:		    04
+* Course:		        SENG 301
+* Instructor:		    Tony Tang
+* TA:			        May Mahmoud
+* Due Date:		        April 6th, 2017 12:00pm 
  */
 
 using Frontend4;
@@ -67,7 +67,7 @@ namespace seng301_asgn4.src
         }
 
         /*
-         * 
+         * Clears the addedCoins list and sets creditInserted back to zero
          */
         public void clearLists()
         {
@@ -81,19 +81,15 @@ namespace seng301_asgn4.src
         public void buttonPressed(int index, ProductKind productKind, int cost, CoinRack[] coinRacks)
         {
             //Currently, button exists and we have enough credit inserted
-            this.productFacade.dispenseProduct(index);
+            this.productFacade.dispenseProduct(index);      //tells the product facade to dispense product
             List<int> coinIndices = new List<int>();
             int change = 0;
             int changeNeeded = 0;
 
-            change = creditInserted - cost;
+            change = creditInserted - cost;     //calculates the change needed
             changeNeeded = change;
-
-            //TODO:
-            //calculate change
-            //request payment facade to dispense change if applicable
             
-            this.paymentFacade.dispenseChange(change, changeNeeded);
+            this.paymentFacade.dispenseChange(change, changeNeeded);    //tells the payment facade to dispense change
         }
     }
 }
