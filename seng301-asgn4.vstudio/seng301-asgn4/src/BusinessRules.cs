@@ -1,3 +1,12 @@
+/*Author:           Lisa Hynes - 30011515
+* Author:           Sean Hoey - 10065269
+* Assignment:		04
+* Course:		    SENG 301
+* Instructor:		Tony Tang
+* TA:			    May Mahmoud
+* Due Date:		    April 6th, 2017 12:00pm 
+ */
+
 using Frontend4;
 using Frontend4.Hardware;
 using System;
@@ -57,6 +66,15 @@ namespace seng301_asgn4.src
             this.communicationFacade.addedCredit(creditInserted); //Update communication facade
         }
 
+        /*
+         * 
+         */
+        public void clearLists()
+        {
+            addedCoins.Clear();
+            creditInserted = 0;
+        }
+
         /**
          * coinkRacks is an array containing each coin rack, ordered by the configured coinKinds
          */
@@ -65,14 +83,17 @@ namespace seng301_asgn4.src
             //Currently, button exists and we have enough credit inserted
             this.productFacade.dispenseProduct(index);
             List<int> coinIndices = new List<int>();
+            int change = 0;
+            int changeNeeded = 0;
 
-            int change = creditInserted - cost;
+            change = creditInserted - cost;
+            changeNeeded = change;
 
             //TODO:
             //calculate change
             //request payment facade to dispense change if applicable
             
-            this.paymentFacade.dispenseChange(change);
+            this.paymentFacade.dispenseChange(change, changeNeeded);
         }
     }
 }

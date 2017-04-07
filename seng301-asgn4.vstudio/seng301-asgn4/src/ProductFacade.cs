@@ -1,3 +1,12 @@
+/*Author:           Lisa Hynes - 30011515
+* Author:           Sean Hoey - 10065269
+* Assignment:		04
+* Course:		    SENG 301
+* Instructor:		Tony Tang
+* TA:			    May Mahmoud
+* Due Date:		    April 6th, 2017 12:00pm 
+ */
+
 
 using Frontend4.Hardware;
 using Frontend4;
